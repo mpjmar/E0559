@@ -19,41 +19,25 @@ public class App {
 			}
 		} while (!correcto);
 
-		for (int i = 1; i <= altura; i++) {
-			int j = 1;
-			while (i == 1 && j <= altura - 2) {
-				System.out.print(j < altura - 2 ? " " : "*");
-				j++;
-			}
-			while (j <= (altura - 2) * 2 - 1) {
-				System.out.print((i == altura - 1 || j == altura - (i - 1) - 2 || j == altura + (i - 1) - 2) ? "^" : " ");
-				j++;
-			}
-			while (j <= altura - 2) {
-				System.out.print(j < altura - 2 ? " " : "Y");
+
+		int altArbol = altura - 2;
+
+		for (int j = 0; j < altura - 2; j++)
+			System.out.print(j < altura - 3 ? " " : "*");
+		System.out.println();
+
+		for (int i = 0; i < altArbol; i++) {
+			int j = 0;
+			while (j < altArbol + i) {
+				System.out.print((j == altArbol - i - 1 || j == altArbol + i - 1 || i == altArbol - 1) ? "^" : " ");
 				j++;
 			}
 			System.out.println();
 		}
+
+		for (int j = 0; j < altura - 2; j++)
+			System.out.print(j < altura - 3 ? " " : "Y");
+		System.out.println();
 		
-
-		/* for (int i = 1; i <= altura; i++) {
-			if (i == 1) {
-				for (int j = 1; j <= altura - 2; j++)
-					System.out.print(j < altura - 2 ? " " : "*");	
-				System.out.println();
-			}
-
-			for (int j = 1; j <= (altura - 2) * 2 - 1; j++)
-				System.out.print((i == altura - 2 || j == altura - (i - 1) - 2 || j == altura + (i - 1) - 2) ? "^" : " ");
-			System.out.println();
-
-			if (i == altura - 2) {
-				for (int j = 1; j <= altura - 2; j++)
-					System.out.print(j < altura - 2 ? " " : "Y");
-				System.out.println();
-			}
-		} */
-
 	}
 }
